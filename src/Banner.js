@@ -8,6 +8,8 @@ function Banner() {
     const [movie, setMovie] = useState([]);
     const [mounted, setMounted] = useState(false);
 
+    // This selects a random show
+
     useEffect(() => {
         setMounted(true);
       }, []);
