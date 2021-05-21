@@ -14,7 +14,7 @@ function SignUpScreen() {
     const register = (e) => {
         e.preventDefault();
 
-        auth.createUserWithEmailAndPassword(signInEmailRef.current.value, signInPassRef.current.value)
+        auth.createUserWithEmailAndPassword(signUpEmailRef.current.value, signUpPassRef.current.value)
         .then().catch((err) => alert(err.message));
     }
 
@@ -27,24 +27,45 @@ function SignUpScreen() {
 
     return (
         <div className="signUp">
-            <form>
-                <h1>Sign In</h1>
-                <input 
-                    ref={signInEmailRef}
-                    placeholder="Email" 
-                    type="email" 
-                />
-                <input 
-                    ref={signInPassRef}
-                    placeholder="Password" 
-                    type="password" 
-                />
-                <button type="submit" onClick={signIn}>Sign In</button>
-                <h4>
-                    <span className="signUp_grey">Don't have an account? </span>
-                    <span className="signUp_link" onClick={register}>Sign Up now.</span>
-                </h4>
-            </form>
+            {isCurrentUser ? (
+                <form>
+                    <h1>Sign In</h1>
+                    <input 
+                        ref={signInEmailRef}
+                        placeholder="Email" 
+                        type="email" 
+                    />
+                    <input 
+                        ref={signInPassRef}
+                        placeholder="Password" 
+                        type="password" 
+                    />
+                    <button type="submit" onClick={signIn}>Sign In</button>
+                    <h4>
+                        <span className="signUp_grey">Don't have an account? </span>
+                        <span className="signUp_link" onClick={() => setIsCurrentUser(false)}>Sign Up now.</span>
+                    </h4>
+                </form>
+            ) : (
+                <form>
+                    <h1>Sign Up</h1>
+                    <input 
+                        ref={signUpEmailRef}
+                        placeholder="Email" 
+                        type="email" 
+                    />
+                    <input 
+                        ref={signUpPassRef}
+                        placeholder="Password" 
+                        type="password" 
+                    />
+                    <button type="submit" onClick={register}>Sign Up</button>
+                    <h4>
+                        <span className="signUp_grey">Don't have an account? </span>
+                        <span className="signUp_link" onClick={() => setIsCurrentUser(true)}>Sign In now.</span>
+                    </h4>
+                </form>
+            )}
         </div>
     )
 }

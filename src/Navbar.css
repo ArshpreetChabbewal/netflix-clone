@@ -25,12 +25,47 @@
     cursor: pointer;
 }
 
+.nav_profile {
+
+}
+
+
 .nav_avatar {
     cursor: pointer;
     position: fixed;
     right: 20px;
     width: 30px;
     height: 30px;
+}
+
+.nav_dropdown {
+    height: 60px;
+    background: rgb(51, 51, 51);
+}
+
+
+.nav_button {
+    display: none;
+    background: rgb(37, 37, 37);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.nav_profile:hover .nav_button {
+    display: block;
+}
+
+.nav_button:hover {
+    background: rgb(61, 61, 61);
 }
 
 .nav_black {
