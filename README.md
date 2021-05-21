@@ -1,3 +1,12 @@
+# Netflix Clone
+
+This is a clone of the popular streaming platform: Netflix. The frontend is dynamically generated using the TMDB database to fetch random movies/shows
+based on a specific genre. There is also a user authentication system, and a logout feature as the user hovers over the avatar on the homepage.
+
+The clone can be viewed via the following link: https://personal-netflix-copy.netlify.app
+
+Enjoy!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
